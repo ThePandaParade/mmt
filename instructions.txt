@@ -1,5 +1,5 @@
 --Minecraft Mod Transfer Tool--
-By Pixel
+By Nxybi 
 
 --If you get an error saying "ModuleNotFound" (bottom line), please run setup.bat--
 
