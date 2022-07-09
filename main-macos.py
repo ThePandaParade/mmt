@@ -10,7 +10,7 @@ colorama.init()
 
 print("Loading Config...")
 
-with open('config.json') as i:
+with open('config-macos.json') as i:
     config = json.load(i)
 
 print(f"Loaded Config ({len(config)} items)")
@@ -39,13 +39,13 @@ success = []
 fail = []
 for file in files:
     try:
-        fl = file.split('./mods\\')
+        fl = file.split('./mods')
         fl = "".join(fl)
-        os.rename(file,f"C:\\Users\\{getpass.getuser()}\\AppData\\{config['MinecraftDirectory']}\\{fl}")
+        os.rename(file,f"/Users/{getpass.getuser()}/Library/Application Support/minecraft/mods/{fl}")
         print(colored(f"[SUCCESS] Copied {fl} over","green"))
         success.append(fl)
     except:
-        fl = file.split('./mods\\')
+        fl = file.split('./mods')
         fl = "".join(fl)
         print(colored(f"[ERROR] Failed to copy {fl}","red"))
         
@@ -56,4 +56,5 @@ for file in files:
 
 print(f"\nFinished!\n\nCopied {len(success)} files\nFailed on {len(fail)} files")
     
+
 
